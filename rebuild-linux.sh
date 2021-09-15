@@ -18,6 +18,30 @@ else
   ./build-linux.sh
 fi
 
+if [ -f "stretch.img" ]
+then
+  echo "===================="
+  echo "Deleting stretch.img"
+  echo "===================="
+  rm stretch.img
+fi
+
+if [ -f "stretch.id_rsa" ]
+then
+  echo "======================="
+  echo "Deleting stretch.id_rsa"
+  echo "======================="
+  rm stretch.id_rsa
+fi
+
+if [ -f "stretch.id_rsa.pub" ]
+then
+  echo "==========================="
+  echo "Deleting stretch.id_rsa.pub"
+  echo "==========================="
+  rm stretch.id_rsa.pub
+fi
+
 echo "========================="
 echo "Running ./create-image.sh"
 echo "========================="
