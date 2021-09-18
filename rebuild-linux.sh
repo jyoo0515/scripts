@@ -10,12 +10,12 @@ then
   echo "========================"
   echo "Running ./build-linux.sh"
   echo "========================"
-  ./build-linux.sh
+  ./build-linux.sh ../linux
 else
   echo "========================"
   echo "Running ./build-linux.sh"
   echo "========================"
-  ./build-linux.sh
+  ./build-linux.sh ../linux
 fi
 
 if [ -f "stretch.img" ]
