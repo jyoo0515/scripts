@@ -30,7 +30,7 @@ jobs:
       - name: Print commit id
         run: |
           cd linux
-          echo "GITHUB_SHA"
+          echo "$GITHUB_SHA"
       
 
       # Runs a single command using the runners shell
