@@ -24,10 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        name: jyoo0515/linux
+        with:
+          submodules: true
       
       - name: Print commit id
-        run: echo "$GITHUB_SHA"
+        run: |
+          cd linux
+          echo "GITHUB_SHA"
       
 
       # Runs a single command using the runners shell
