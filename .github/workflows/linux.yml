@@ -30,10 +30,10 @@ jobs:
       - name: Download and unzip current snapshot of Linux
         run: |
           LINUX_SHA=$(git rev-parse HEAD:linux)
-          curl $GITHUB_SERVER_URL/jyoo0515/linux/archive/$LINUX_SHA.zip -o linux.zip
-          unzip linux.zip
+          curl -L $GITHUB_SERVER_URL/jyoo0515/linux/archive/$LINUX_SHA.zip -o linux.zip && unzip linux.zip
+          echo "LINUX_DIR=linux-$LINUX_SHA" >> $GITHUB_ENV
       
       - name: List files
         run: |
-          cd linux
+          cd $LINUX_DIR
           ls
