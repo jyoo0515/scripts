@@ -33,7 +33,5 @@ jobs:
           curl -L $GITHUB_SERVER_URL/jyoo0515/linux/archive/$LINUX_SHA.zip -o linux.zip && unzip linux.zip
           echo "LINUX_DIR=linux-$LINUX_SHA" >> $GITHUB_ENV
       
-      - name: List files
-        run: |
-          cd $LINUX_DIR
-          ls
+      - name: Build the unzipped source code
+        run: ./build-linux.sh $LINUX_DIR tinyconfig
