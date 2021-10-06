@@ -27,11 +27,10 @@ jobs:
         with:
           submodules: true
       
-      - name: Print commit id
+      - name: Get commit sha for linux
         run: |
-          cd linux
-          echo "$GITHUB_SHA"
-      
+          LINUX_SHA=$(git rev-parse HEAD:linux)
+          echo "$GITHUB_SERVER_URL/linux/archive/$LINUX_SHA.zip"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
