@@ -27,17 +27,15 @@ jobs:
         with:
           submodules: true
       
-      - name: Get commit sha for linux
+      - name: Download current snapshot of Linux
         run: |
           LINUX_SHA=$(git rev-parse HEAD:linux)
-          echo "$GITHUB_SERVER_URL/linux/archive/$LINUX_SHA.zip"
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+          curl $GITHUB_SERVER_URL/jyoo0515/linux/archive/$LINUX_SHA.zip -o linux.zip
+      
+      - name: Unzip Linux
+        run: unzip linux.zip
+      
+      - name: List files
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          cd linux
+          ls
