@@ -32,9 +32,9 @@ jobs:
           LINUX_SHA=$(git rev-parse HEAD:linux)
           curl -L $GITHUB_SERVER_URL/jyoo0515/linux/archive/$LINUX_SHA.zip -o linux.zip && unzip linux.zip
           echo "LINUX_DIR=linux-$LINUX_SHA" >> $GITHUB_ENV
-      
-      - name: Install GCC
-        run: sudo apt-get install -y gcc-8 g++-8
+    
+      - name: Install dependencies
+        run: ./install-deps.sh
       
       - name: Build the unzipped source code
         run: ./build-linux.sh $LINUX_DIR tinyconfig
