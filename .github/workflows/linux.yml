@@ -27,13 +27,11 @@ jobs:
         with:
           submodules: true
       
-      - name: Download current snapshot of Linux
+      - name: Download and unzip current snapshot of Linux
         run: |
           LINUX_SHA=$(git rev-parse HEAD:linux)
           curl $GITHUB_SERVER_URL/jyoo0515/linux/archive/$LINUX_SHA.zip -o linux.zip
-      
-      - name: Unzip Linux
-        run: unzip linux.zip
+          unzip linux.zip
       
       - name: List files
         run: |
