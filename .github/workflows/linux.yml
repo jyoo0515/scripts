@@ -19,8 +19,6 @@ jobs:
   build-linux:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
-    env:
-      CC: gcc-8
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -36,7 +34,7 @@ jobs:
           echo "LINUX_DIR=linux-$LINUX_SHA" >> $GITHUB_ENV
       
       - name: Install GCC
-        run: sudo apt-get install gcc
+        run: sudo apt-get install -y gcc-8 g++-8
       
       - name: Build the unzipped source code
         run: ./build-linux.sh $LINUX_DIR tinyconfig
