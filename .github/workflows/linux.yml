@@ -9,6 +9,8 @@ on:
     paths:
       - linux
       - 'linux/**'
+      
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,4 +36,4 @@ jobs:
         run: ./install-deps.sh
       
       - name: Build the unzipped source code
-        run: ./build-linux.sh $LINUX_DIR csi2115_f21_deconfig
+        run: ./build-linux.sh $LINUX_DIR
