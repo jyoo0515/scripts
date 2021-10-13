@@ -34,4 +34,4 @@ jobs:
         run: ./install-deps.sh
       
       - name: Build the unzipped source code
-        run: ./build-linux.sh $LINUX_DIR tinyconfig
+        run: ./build-linux.sh $LINUX_DIR csi2115_f21_deconfig
