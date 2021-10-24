@@ -1,0 +1,3 @@
+Config: https://github.com/csi2115-f21/scripts/blob/main/configs/csi2115_f21_defconfig
+Reproduced: https://github.com/csi2115-f21/linux/commit/0d8dd67be013727ae57645ecd3ea2c36365d7da8
+Patched:
